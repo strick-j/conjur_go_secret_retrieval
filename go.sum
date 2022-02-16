@@ -42,6 +42,8 @@ github.com/stretchr/testify v1.7.0 h1:nwc3DEeHmmLAfoZucVR881uASk0Mfjw8xYJ99tb5Cc
 github.com/stretchr/testify v1.7.0/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
 github.com/strick-j/conjur-authn-iam-go-client v0.0.0-20220216191012-313c3b3f5d1a h1:VwaNYCe7R1/pRIg/xpVjkop0hBMLYtimo0EeSFoME0c=
 github.com/strick-j/conjur-authn-iam-go-client v0.0.0-20220216191012-313c3b3f5d1a/go.mod h1:YVct+mLiEuJm+yTihn0MtKAde3W/F9qKbD/jSdASvNg=
+github.com/strick-j/conjur-authn-iam-go-client v0.0.0-20220216220456-bfdee98d486f h1:kYYtDRJu8FUBczstuFGcON1ckZ2WaBDcB9frdnm/bdU=
+github.com/strick-j/conjur-authn-iam-go-client v0.0.0-20220216220456-bfdee98d486f/go.mod h1:GRnWR+UfBEnZWUMMerIpv21cwDCpGq4ohsXoUgHeIZw=
 golang.org/x/sys v0.0.0-20191026070338-33540a1f6037/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20211214234402-4825e8c3871d h1:1oIt9o40TWWI9FUaveVpUvBe13FNqBNVXy3ue2fcfkw=
 golang.org/x/sys v0.0.0-20211214234402-4825e8c3871d/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=

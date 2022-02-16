@@ -8,18 +8,20 @@ import (
 )
 
 func main() {
+	methodIdPtr := flag.String("methodid", "", "IAM Method (e.g. static, iamrole, assumerole")
 	hostIdPtr := flag.String("hostid", "", "Conjur Host Id (e.g. host/policy/prefix/id")
 	serviceIdPtr := flag.String("serviceid", "", "Conjur Service ID (e.g. prod)")
 	variableIdPtr := flag.String("variableid", "", "Variable Id (e.g. policy/path/variable-id)")
 	flag.Parse()
 
-	details := &conjurIamClient.ConjurDetails{
+	ctx := &conjurIamClient.ConjurContext{
+		MethodId:  *methodIdPtr,
 		HostId:    *hostIdPtr,
 		ServiceId: *serviceIdPtr,
 	}
 
 	// Retrieve Conjur Client based on IAM Role
-	conjurClient, err := conjurIamClient.NewClientFromRole(*details)
+	conjurClient, err := conjurIamClient.NewClientFromRole(*ctx)
 	if err != nil {
 		fmt.Printf("error creating client : %s", err)
 	}
