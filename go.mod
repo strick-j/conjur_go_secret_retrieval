@@ -2,7 +2,7 @@ module github.com/strick-j/conjur_go_secret_retrieval
 
 go 1.17
 
-require github.com/strick-j/conjur-authn-iam-go-client v0.0.0-20220216220456-bfdee98d486f
+require github.com/strick-j/conjur-authn-iam-go-client v0.0.0-20220217175925-5c897d284326
 
 require (
 	github.com/aws/aws-sdk-go-v2 v1.13.0 // indirect
@@ -19,6 +19,6 @@ require (
 	github.com/bgentry/go-netrc v0.0.0-20140422174119-9fd32a8b3d3d // indirect
 	github.com/cyberark/conjur-api-go v0.8.1 // indirect
 	github.com/sirupsen/logrus v1.8.1 // indirect
-	golang.org/x/sys v0.0.0-20211214234402-4825e8c3871d // indirect
+	golang.org/x/sys v0.0.0-2022004901d540-865506485158 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )

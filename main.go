@@ -19,7 +19,7 @@ func main() {
 	variableIdPtr := flag.String("variableid", "", "Variable Id (e.g. policy/path/variable-id)")
 	flag.Parse()
 
-	params := &conjurIamClient.ConjurParams{
+	params := &conjurIamClient.Params{
 		IamAuthMethod: *methodPtr,
 		Profile:       *profilePtr,
 		Session:       *sessionIdPtr,
