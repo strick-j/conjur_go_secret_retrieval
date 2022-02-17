@@ -19,7 +19,7 @@ func main() {
 	variableIdPtr := flag.String("variableid", "", "Variable Id (e.g. policy/path/variable-id)")
 	flag.Parse()
 
-	params := &conjurIamClient.Params{
+	params := &conjurIamClient.ConjurParams{
 		IamAuthMethod: *methodPtr,
 		Profile:       *profilePtr,
 		Session:       *sessionIdPtr,
@@ -31,7 +31,7 @@ func main() {
 	}
 
 	// Retrieve Conjur Client based on IAM Role
-	conjurClient, err := conjurIamClient.NewClientFromRole(*params)
+	conjurClient, err := conjurIamClient.NewConjurIamClient(*params)
 	if err != nil {
 		fmt.Printf("error creating client : %s", err)
 	}
