@@ -8,20 +8,30 @@ import (
 )
 
 func main() {
-	methodIdPtr := flag.String("methodid", "", "IAM Method (e.g. static, iamrole, assumerole")
-	hostIdPtr := flag.String("hostid", "", "Conjur Host Id (e.g. host/policy/prefix/id")
+	methodPtr := flag.String("methodid", "", "IAM Method (e.g. static, iamrole, assumerole)")
+	profilePtr := flag.String("profile", "", "IAM Profile to use (e.g. Default)")
+	sessionIdPtr := flag.String("sessionid", "", "Session ID for Role Assumption (e.g. Default)")
+	accessKeyPtr := flag.String("accesskeyid", "", "AWS AKID")
+	secretKeyIdPtr := flag.String("secretkeyid", "", "AWS Secret Key Id")
+	sessionTokenPtr := flag.String("sessiontoken", "", "AWS Session Token")
+	hostIdPtr := flag.String("hostid", "", "Conjur Host Id (e.g. host/policy/prefix/id)")
 	serviceIdPtr := flag.String("serviceid", "", "Conjur Service ID (e.g. prod)")
 	variableIdPtr := flag.String("variableid", "", "Variable Id (e.g. policy/path/variable-id)")
 	flag.Parse()
 
-	ctx := &conjurIamClient.ConjurContext{
-		MethodId:  *methodIdPtr,
-		HostId:    *hostIdPtr,
-		ServiceId: *serviceIdPtr,
+	params := &conjurIamClient.ConjurParams{
+		IamAuthMethod: *methodPtr,
+		Profile:       *profilePtr,
+		Session:       *sessionIdPtr,
+		AccessKey:     *accessKeyPtr,
+		SecretKey:     *secretKeyIdPtr,
+		SessionToken:  *sessionTokenPtr,
+		HostId:        *hostIdPtr,
+		ServiceId:     *serviceIdPtr,
 	}
 
 	// Retrieve Conjur Client based on IAM Role
-	conjurClient, err := conjurIamClient.NewClientFromRole(*ctx)
+	conjurClient, err := conjurIamClient.NewClientFromRole(*params)
 	if err != nil {
 		fmt.Printf("error creating client : %s", err)
 	}
